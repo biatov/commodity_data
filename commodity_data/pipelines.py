@@ -26,4 +26,3 @@ class CommodityDataPipeline(object):
             item['value'],
         ])
         return item
-1
