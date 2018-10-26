@@ -17,3 +17,6 @@ class CommodityDataItem(scrapy.Item):
     year = scrapy.Field()
     period = scrapy.Field()
     value = scrapy.Field()
+    date = scrapy.Field()
+    close = scrapy.Field()
+    source_index = scrapy.Field()

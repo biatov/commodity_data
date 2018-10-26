@@ -8,21 +8,37 @@ import csv
 
 
 class CommodityDataPipeline(object):
+    """bls"""
+    # def __init__(self):
+    #     self.file = csv.writer(open('demo.csv', 'w'), quoting=csv.QUOTE_MINIMAL)
+    #     self.file.writerow(
+    #         ['Series Id', 'Series Title', 'Group', 'Item', 'Base Date', 'Year', 'Period', 'Value']
+    #     )
+    #
+    # def process_item(self, item, spider):
+    #     self.file.writerow([
+    #         item['series_id'],
+    #         item['series_title'],
+    #         item['group'],
+    #         item['item'],
+    #         item['base_date'],
+    #         item['year'],
+    #         item['period'],
+    #         item['value'],
+    #     ])
+    #     return item
     def __init__(self):
-        self.file = csv.writer(open('demo.csv', 'w'), quoting=csv.QUOTE_MINIMAL)
+        self.file = csv.writer(open('barchart.csv', 'w'), quoting=csv.QUOTE_MINIMAL)
         self.file.writerow(
-            ['Series Id', 'Series Title', 'Group', 'Item', 'Base Date', 'Year', 'Period', 'Value']
+            ['Series Id', 'Series Title', 'Date', 'Close', 'Source Index']
         )
 
     def process_item(self, item, spider):
         self.file.writerow([
             item['series_id'],
             item['series_title'],
-            item['group'],
-            item['item'],
-            item['base_date'],
-            item['year'],
-            item['period'],
-            item['value'],
+            item['date'],
+            item['close'],
+            item['source_index'],
         ])
         return item
